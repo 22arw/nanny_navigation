@@ -1,0 +1,20 @@
+<launch> 
+    <arg name="odom_topic" default="odom" />  
+  <!-- Starting move_base node --> 
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"> 
+  <!-- common parameters of global costmap --> 
+    <rosparam file="$(find nanny_navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+  <!-- common parameters of local costmap --> 
+    <rosparam file="$(find nanny_navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" /> 
+  <!-- local cost map parameters -->  
+    <rosparam file="$(find nanny_navigation)/config/local_costmap_params.yaml" command="load" /> 
+  <!-- global cost map parameters --> 
+    <rosparam file="$(find nanny_navigation)/config/global_costmap_params.yaml" command="load" /> 
+  <!-- base local planner parameters --> 
+    <rosparam file="$(find nanny_navigation)/config/base_local_planner_params.yaml" command="load" />  
+  <!-- move_base node parameters   -->
+    <rosparam file="$(find nanny_navigation)/config/move_base_params.yaml" command="load" /> 
+    <remap from="cmd_vel" to="/diff_drive_ctrl/cmd_vel"/> 
+    <remap from="odom" to="$(arg odom_topic)"/> 
+  </node> 
+</launch> 

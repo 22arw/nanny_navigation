@@ -1,0 +1,13 @@
+global_costmap:
+  #coordinate frame of costmap
+  global_frame: map
+  #coordinate frame costmap should reference as robot base
+  robot_base_frame: base_link
+  #frequency at which cost map runs its main update loop
+  update_frequency: 10.0
+  #frequency cost map is published
+  publish_frequency: 10.0
+  #rate at which transform has to perform; robot will stop if transforms aren't updated at this rate
+  transform_tolerance: 0.5
+  #using existing map
+  static_map: true
