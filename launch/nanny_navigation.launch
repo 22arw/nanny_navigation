@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-    <arg name="map_file" value="$(find nanny_navigation)/config/map.yaml"></arg>
+    <arg name="map_file" value="$(find nanny_navigation)/maps/map.yaml"></arg>
     <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)"></node>
 
     <arg name="set_base_frame" default="base_link"/>

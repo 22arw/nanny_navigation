@@ -13,4 +13,4 @@ oscillation_timeout: 10.0
 #Distance that robot should move to be considered which not be oscillating. Moving above this distance will reset the oscillation_timeout 
 oscillation_distance: 0.2 
 # local planner - default is trajectory rollout 
-base_local_planner: "dwa_local_planner/DWAPlannerROS" 
+#base_local_planner: "dwa_local_planner/DWAPlannerROS" 
